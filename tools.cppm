@@ -16,12 +16,7 @@ export namespace mplot
         bool fileExists (const std::string& path)
         {
             if (std::filesystem::exists(path)) {
-                if (std::filesystem::is_regular_file (path)
-                    || std::filesystem::is_block_file (path)
-                    || std::filesystem::is_socket (path)
-                    || std::filesystem::is_fifo (path)
-                    || std::filesystem::is_symlink (path)
-                    || std::filesystem::is_character_file (path)) {
+                if (std::filesystem::is_regular_file (path)) {
                     return true;
                 }
             }

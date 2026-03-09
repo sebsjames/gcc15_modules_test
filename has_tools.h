@@ -2,9 +2,6 @@
 #pragma once
 
 #include <cstdint>
-#include <vector>
-#include <iostream>
-#include <cstring>
 #include <memory>
 
 import mplot.tools;
@@ -13,6 +10,7 @@ namespace unused
 {
     uint32_t a_function()
     {
+        // Imagine we used make_unique or something else from <memory> first
         if (mplot::tools::fileExists ("some_file")) { return 1; }
         return 0;
     }
