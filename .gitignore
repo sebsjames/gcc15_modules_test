@@ -1,2 +1,2 @@
-test1.o tools.o
+*.o
 gcm.cache
