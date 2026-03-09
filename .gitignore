@@ -1,3 +1,6 @@
 *.o
 *.pcm
 gcm.cache
+build
+bgcc
+bclang
