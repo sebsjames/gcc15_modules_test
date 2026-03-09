@@ -1,4 +1,8 @@
-Demonstrating a build issue that occurs in g++15 but not in clang++
+# Seb's g++15 bug
+
+Demonstrating a build issue that occurs for me in g++15 but not in clang++.
+
+## Setup
 
 To reproduce, clone this repo recursively, or after cloning do
 
@@ -8,7 +12,29 @@ git submodule update
 ```
 To bring in nlohmann::json on the **develop** branch
 
-The build_g++.sh script (you will have to edit the path to your g++-15 binary) first compiles tools.cppm, then test1.cppm.
+## Build
+
+Edit build_g++.sh script with the path to your g++-15 binary. The script first compiles tools.cppm, then test1.cppm.
+
+You can also see that clang++ (version 18 and up) compiles the modules successfully.
+
+You can also run a g++ or clang++ build with cmake:
+
+```bash
+mkdir bgcc
+cd bgcc
+CXX=/path/to/g++-15 cmake .. -GNinja
+ninja
+cd ..
+
+```bash
+mkdir bclang
+cd bclang
+CXX=/path/to/clang++ cmake .. -GNinja
+ninja
+```
+
+## The code
 
 test1.cppm `#includes` **has_tools.h**, which `imports` tools.
 
