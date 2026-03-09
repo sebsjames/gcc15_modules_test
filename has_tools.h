@@ -1,4 +1,4 @@
-// A file that in included in my modules, but itself imports a module
+// A file that is #included test1.cppm, but itself imports a module
 #pragma once
 
 #include <cstdint>
@@ -11,11 +11,9 @@ import mplot.tools;
 
 namespace unused
 {
-    uint32_t function ()
+    uint32_t a_function()
     {
-        if (mplot::tools::fileExists ("some_file")) {
-            return 1;
-        }
+        if (mplot::tools::fileExists ("some_file")) { return 1; }
         return 0;
     }
 }
