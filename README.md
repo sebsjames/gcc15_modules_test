@@ -2,6 +2,12 @@
 
 Demonstrating a build issue that occurs for me in g++15/master but not in clang++. This may be an issue in nlohmann json or in gcc (I don't know which).
 
+This problem showed up for me while I have been working on a conversion of sebsjames/mathplot to a C++ modules build system. You can find my work there on the dev/modules3 branch:
+
+https://github.com/sebsjames/mathplot/tree/dev/modules3
+
+If you do a CMake build of mathplot with g++15 or g++-master, you'll see a similar error.
+
 ## Setup
 
 To reproduce, clone this repo recursively, or after cloning do
